@@ -105,10 +105,10 @@ else
 fi
 
 # For Spring Boot, there should only be 1 fat jar
-if [ $(ls $DEPLOY_DIR/*.jar | wc -l) -eq 1 ]; then
-  mv $DEPLOY_DIR/*.jar $DEPLOY_DIR/app.jar
-  [ ! -f $DEPLOY_DIR/app.jar ] && echo "Application could not be properly built." && exit 1 
-  echo "---> Application deployed successfully.  jar file is located in $DEPLOY_DIR/app.jar"
+if [ $(ls $DEPLOY_DIR/*.war | wc -l) -eq 1 ]; then
+  mv $DEPLOY_DIR/*.war $DEPLOY_DIR/app.war
+  [ ! -f $DEPLOY_DIR/app.war ] && echo "Application could not be properly built." && exit 1 
+  echo "---> Application deployed successfully.  war file is located in $DEPLOY_DIR/app.war"
 else
   exit 1
 fi
