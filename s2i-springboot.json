@@ -30,7 +30,7 @@
       "name": "BUILD_TYPE",
       "displayName": "Build Type",
       "description": "Specify build type - Maven OR Gradle",
-      "value": "Maven"
+      "value": "Gradle"
     },
     {
       "name": "MAVEN_ARGS_APPEND",
