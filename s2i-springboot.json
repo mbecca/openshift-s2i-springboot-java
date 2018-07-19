@@ -115,6 +115,10 @@
 		{
 		  "name": "EXT",
 		  "value": "${EXT}"
+		},
+		{
+		  "name": "APP_OPTIONS",
+		  "value": "${APP_OPTIONS}"
 		}
 	    ]
           },
