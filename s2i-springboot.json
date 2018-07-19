@@ -15,7 +15,7 @@
       "name": "GIT_URI",
       "displayName": "Git Repository containing application source code",
       "description": "GIT URL pointing to the repository containing application source code for Java Spring Boot Application",
-      "value": "https://github.com/ganrad/YourProject.git"
+      "value": ""
     },
     {
       "description": "Git branch/tag reference",
@@ -27,17 +27,6 @@
       "name": "CONTEXT_DIR"
     },
     {
-      "name": "BUILD_TYPE",
-      "displayName": "Build Type",
-      "description": "Specify build type - Maven OR Gradle",
-      "value": "Gradle"
-    },
-    {
-      "name": "MAVEN_ARGS_APPEND",
-      "displayName": "Maven arguments to append",
-      "description": "Append Maven arguments"
-    },
-    {
       "name": "GRADLE_ARGS_APPEND",
       "displayName": "Gradle arguments to append",
       "description": "Append Gradle arguments"
@@ -46,6 +35,11 @@
       "name": "APP_OPTIONS",
       "displayName": "Application arguments",
       "description": "Arguments to be passed to the Springboot application (at runtime)"
+    },
+    {
+      "name": "EXT",
+      "displayName": "Application extension",
+      "description": "jar or war"
     }
   ],
   "objects": [
@@ -54,7 +48,7 @@
       "kind": "ImageStream",
       "metadata": {
         "annotations": {
-          "openshift.io/generated-by": "OpenShiftNewApp"
+          "openshift.io/generated-by": "DGSIAF"
         },
         "labels": {
           "app": "${APP_NAME}"
@@ -83,7 +77,7 @@
       "kind": "BuildConfig",
       "metadata": {
         "annotations": {
-          "openshift.io/generated-by": "OpenShiftNewApp"
+          "openshift.io/generated-by": "DGSIAF"
         },
         "labels": {
           "app": "${APP_NAME}"
@@ -123,13 +117,7 @@
           "type": "Source"
         },
         "triggers": [
-          {
-            "github": {
-		"secret": "secret"
-            },
-            "type": "GitHub"
-          },
-          {
+     	  {
             "generic": {
 		"secret": "secret"
             },
@@ -153,7 +141,7 @@
       "kind": "DeploymentConfig",
       "metadata": {
         "annotations": {
-          "openshift.io/generated-by": "OpenShiftNewApp"
+          "openshift.io/generated-by": "DGSIAF"
         },
         "labels": {
           "app": "${APP_NAME}"
@@ -180,7 +168,7 @@
         "template": {
           "metadata": {
             "annotations": {
-              "openshift.io/generated-by": "OpenShiftNewApp"
+              "openshift.io/generated-by": "DGSIAF"
             },
             "labels": {
               "app": "${APP_NAME}",
@@ -236,7 +224,7 @@
       "kind": "Service",
       "metadata": {
         "annotations": {
-          "openshift.io/generated-by": "OpenShiftNewApp"
+          "openshift.io/generated-by": "DGSIAF"
         },
         "creationTimestamp": null,
         "labels": {
@@ -247,7 +235,7 @@
       "spec": {
         "ports": [
           {
-            "name": "8080-tcp",
+            "name": "port-8080",
             "port": 8080,
             "protocol": "TCP",
             "targetPort": 8080
