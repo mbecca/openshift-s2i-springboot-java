@@ -39,7 +39,7 @@
     {
       "name": "EXT",
       "displayName": "Application extension",
-      "description": "jar or war"
+      "description": "jat or war"
     }
   ],
   "objects": [
@@ -111,6 +111,10 @@
 		{
 		  "name": "BUILD_TYPE",
 		  "value": "${BUILD_TYPE}"
+		},
+		{
+		  "name": "EXT",
+		  "value": "${EXT}"
 		}
 	    ]
           },
